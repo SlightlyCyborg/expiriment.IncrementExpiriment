@@ -28,11 +28,7 @@ Increment addition for 10000000 iterations took 83546515 nanosecs
    Simple addition for 100000000 iterations took 6511016 nanosecs
 Increment addition for 100000000 iterations took 681487644 nanosecs
 ```
-
-
-Turns out, after enough iterations, the iterative version is actually on par with the regular version.
-
-I tried to disassemble the JIT code, but I do not have the appropriate disassembler installed and Arch linux doesn't seem to have an easy way to get it install, so I'll just have to leave it as it is for now
+The JIT does not optimize the iterations out.
 
 ## Run it yourself
 
