@@ -30,40 +30,52 @@ class IncrementExpiriment {
         return rv;
     }
 
-    public static void runSimpleAddition(int n) {
-        int a, b;
+    public static int[] getNRandomInts(int n) {
+        int[] rv = new int[n];
         for(int i = 0; i < n; i++) {
-            a = random.nextInt();
-            b = random.nextInt();
-            simpleAdd(a, b);
+            rv[i] = random.nextInt();
         }
+        return rv;
     }
 
-    public static void runIncrementAddition(int n) {
-        int a, b;
+    public static long runSimpleAddition(int n) {
+        long start, stop;
+        int[] a = getNRandomInts(n);
+        int[] b = getNRandomInts(n);
+
+        start = System.nanoTime();
         for(int i = 0; i < n; i++) {
-            a = random.nextInt();
-            b = random.nextInt();
-            incrementAdd(a, b);
+            simpleAdd(a[i], b[i]);
         }
+        stop = System.nanoTime();
+        return stop-start;
+    }
+
+    public static long runIncrementAddition(int n) {
+        long start, stop;
+        int[] a = getNRandomInts(n);
+        int[] b = getNRandomInts(n);
+
+        start = System.nanoTime();
+        for(int i = 0; i < n; i++) {
+            incrementAdd(a[i], b[i]);
+        }
+        stop = System.nanoTime();
+        return stop-start;
     }
 
     public static void main(String[] args) {
         int numIterations = getNumIterations(args);
+        long time;
 
         String msg;
-        long start, stop;
 
-        start = System.nanoTime();
-        runSimpleAddition(numIterations);
-        stop = System.nanoTime();
+        time = runSimpleAddition(numIterations);
         msg = "   Simple addition for %d iterations took %d nanosecs\n";
-        System.out.printf(msg, numIterations, stop-start);
+        System.out.printf(msg, numIterations, time);
 
-        start = System.nanoTime();
-        runIncrementAddition(numIterations);
-        stop = System.nanoTime();
+        time = runIncrementAddition(numIterations);
         msg = "Increment addition for %d iterations took %d nanosecs\n";
-        System.out.printf(msg, numIterations, stop-start);
+        System.out.printf(msg, numIterations, time);
     }
 }
