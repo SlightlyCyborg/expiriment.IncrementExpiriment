@@ -33,3 +33,11 @@ Increment addition for 100000000 iterations took 2858437194 nanosecs
 Turns out, after enough iterations, the iterative version is actually on par with the regular version.
 
 I tried to disassemble the JIT code, but I do not have the appropriate disassembler installed and Arch linux doesn't seem to have an easy way to get it install, so I'll just have to leave it as it is for now
+
+## Run it yourself
+
+```
+make
+make run-expiriment
+cat result
+```
