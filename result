@@ -1,10 +1,14 @@
    Simple addition for 10000 iterations took 2797957 nanosecs
 Increment addition for 10000 iterations took 18517633 nanosecs
+
    Simple addition for 100000 iterations took 11802824 nanosecs
 Increment addition for 100000 iterations took 26309538 nanosecs
+
    Simple addition for 1000000 iterations took 38033671 nanosecs
 Increment addition for 1000000 iterations took 53661604 nanosecs
+
    Simple addition for 10000000 iterations took 314720960 nanosecs
 Increment addition for 10000000 iterations took 337203954 nanosecs
+
    Simple addition for 100000000 iterations took 2805480623 nanosecs
 Increment addition for 100000000 iterations took 2858437194 nanosecs
