@@ -2,7 +2,7 @@
 all: IncrementExpiriment.java
 	javac IncrementExpiriment.java
 
-run-expiriment:
+run:
 	java IncrementExpiriment 10000 > result
 	printf "\n" >> result
 	java IncrementExpiriment 100000 >> result

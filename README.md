@@ -38,6 +38,6 @@ I tried to disassemble the JIT code, but I do not have the appropriate disassemb
 
 ```
 make
-make run-expiriment
+make run
 cat result
 ```
